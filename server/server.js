@@ -44,10 +44,14 @@ app.put('/lions/:id', function(req, res) {
     res.json(updatedLion);
   }
 });
-
+                                                                                                                                                                                                         
 app.set('port', (process.env.PORT || 8080));
+
+app.delete('/delete', function(req, res)
+{
+    delete res.json(req.body);
+});
 
 app.listen(app.get('port'), function() {
  console.log("Node app is running at localhost:" + app.get('port'))
 });
-
